@@ -36,21 +36,25 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#"><i class="fa fa-bolt"></i> Live <span class="sr-only">(current)</span></a></li>
+                    <li class="active"><a href="{{url_for('home')}}"><i class="fa fa-bolt"></i> Scrims <span class="sr-only">(current)</span></a></li>
                     <li><a href="#"><i class="fa fa-users"></i> Teams</a></li>
                     <li><a href=""><i class="fa fa-user"></i> Players</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Link</a></li>
+                    
+                    {% if current_user.is_authenticated %}
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-steam-square"></i><span class="caret"></span></a>
+                        <a style="padding: 0" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="{{g.user.avatar_url_full}}" width="45px" height="45px"> {{g.user.nickname}} <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#"><i class="fa fa-eye"></i> Profile</a></li>
+                            <li><a href="{{ url_for('profile', steam_id=g.user.steam_id)}}"><i class="fa fa-eye"></i> Profile</a></li>
                             <li><a href="#"><i class="fa fa-pencil-square-o"></i> Edit</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="#"><i class="fa fa-sign-out"></i> Logout</a></li>
+                            <li><a href="{{url_for('logout')}}"><i class="fa fa-sign-out"></i> Logout</a></li>
                         </ul>
                     </li>
+                    {% else %}
+                    <li><a href="{{ url_for('login') }}"><img src='http://cdn.steamcommunity.com/public/images/signinthroughsteam/sits_small.png' /></a></li>
+                    {% endif %}
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
