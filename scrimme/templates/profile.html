@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <img src="#" class="img-responsive center-block" style="border-radius: 50%;">
+                    <h3 class="text-center">Test</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                        <span class="badge">Test</span>
+                        Main Class
+                        </li>
+                        <li class="list-group-item">
+                        <span class="badge">Test</span>
+                        Skill Level
+                        </li>
+                        <li class="list-group-item">
+                        <!--<span style="float: right;" class="label label-{% if status=="online" %}success{% else %}default{% endif %}">{{status}}</span>-->
+                        Status
+                        </li>
+                    </ul>
+                    <a class="btn btn-success btn-block" href="#"><i class="fa fa-envelope-o"></i> Message</a>
+                    <a class="btn btn-warning btn-block" href="#"><i class="fa fa-pencil-square-o"></i> Edit</a>
+                    <a class="btn btn-default btn-block" href=""><i class="fa fa-plus-square-o"></i> New Team</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Player info</h3>
+                </div>
+                <div class="panel-body">
+                    Panel content
+                </div>
+            </div>
+            
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    Teams
+                </div>
+            <div class="list-group">
+                <a class="list-group-item" href="#">
+                    <h4 class="list-group-item-heading">List group item heading</h4>
+                    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                </a>
+                <a class="list-group-item" href="#">
+                    <h4 class="list-group-item-heading">List group item heading</h4>
+                    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                </a>
+            </div>
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

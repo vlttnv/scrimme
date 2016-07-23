@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/font-awesome.min.css')}}">
+
+    <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}" media="screen,projection"
+    />
+    <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='css/custom.css')}}" media="screen,projection"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    {% block nav %}
+
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                <a class="navbar-brand" href="#">scrim.me V2</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#"><i class="fa fa-bolt"></i> Live <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#"><i class="fa fa-users"></i> Teams</a></li>
+                    <li><a href=""><i class="fa fa-user"></i> Players</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Link</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-steam-square"></i><span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#"><i class="fa fa-eye"></i> Profile</a></li>
+                            <li><a href="#"><i class="fa fa-pencil-square-o"></i> Edit</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#"><i class="fa fa-sign-out"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    {% endblock %} {% block body %} {% endblock %} {% block after_body %}
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script> {% endblock %} {% block footer %}
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>Contact Us</h2>
+                    <p>Join our <a href="http://steamcommunity.com/groups/scrim-me">steam group</a>.</p>
+                    <p>For feedback, suggestions and bug reporting please contact us:<br>
+                        <strong><i class="fa fa-envelope"></i> support@scrim.me</strong>
+                        <br>Created by <a href="http://steamcommunity.com/profiles/76561198122576996/">Charlito</a>, <a href="http://steamcommunity.com/id/chow0der/">Chowder</a>                        &amp; <a href="http://steamcommunity.com/id/hdbuster/">Pie</a> </p>
+                </div>
+                <div class="col-md-4">
+                    <h2>Our Friends</h2>
+                    <h4><a href="http://tf2playerrankings.com">tf2playerrankings.com</a></h4>
+                    <h4><a href="http://ugcleague.com">ugcleague.com</a></h4>
+                    <h4><a href="http://tf2pickup.net/">TF2Pickup.net</a></h4>
+                    <p><strong>Powered by <a href="http://steampowered.com">Steam <i class="fa fa-steam"></i></a></strong></p>
+                </div>
+                <div class="col-md-4">
+                    <h2>Time Zones</h2>
+                    <p>
+                        TIMEZONES
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    {% endblock %}
+</body>
+
+</html>

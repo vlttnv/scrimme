@@ -1,0 +1,44 @@
+{% extends "onboard_layout.html" %} {% block body %}
+<div class="container">
+
+
+    <div class="jumbotron" style="border-radius: 1%">
+        <h1>scrim.me V2</h1>
+        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+            condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p><a class="btn btn-lg btn-success" href="{{url_for('home')}}" role="button"><i class="fa fa-steam"></i> Login With Steam</a></p>
+    </div>
+
+    <div class="row marketing">
+        <div class="col-lg-6">
+            <h4><i class="fa fa-bolt"></i> Live Scrims</h4>
+            <p>A dedicated Live Scrims page where you can post and find scrims in real time. No more IRC!</p>
+
+            <h4><i class="fa fa-male"></i> Live Merc Listings</h4>
+            <p>Don't have a team but still want to practice? Are you looking for an extra player. List yourself as a merc or
+                find a merc on the Live Scrims page!</p>
+
+            <h4><i class="fa fa-comment"></i> Live Chat</h4>
+            <p>Live Scrims are organized using live chat between leaders.</p>
+        </div>
+
+        <div class="col-lg-6">
+            <h4><i class="fa fa-cogs"></i> Team Management</h4>
+            <p>Organize your team, mark availability times on the integrated spreadsheets, add and kick players, promote leader.</p>
+
+            <h4><i class="fa fa-envelope-o"></i> Player Messages</h4>
+            <p>Integrated messaging between players. Is the team leader offline? Message him directly.</p>
+
+            <h4><i class="fa fa-volume-up"></i> Audio Notification</h4>
+            <p>You will be alerted when you receive a scrim challenge or new message.</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; Company 2014</p>
+    </footer>
+
+</div>
+<!-- /container -->
+
+{% endblock %}

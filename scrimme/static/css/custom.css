@@ -1,0 +1,32 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 210px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 210px;
+  background-color: #f5f5f5;
+}
+.jumbotron {
+		background: url('../img/all.jpg');
+		/*background-position: center center;*/
+		background-size: cover;
+}
+.jumbotron h1 {
+		color: #ffffff;
+}
+.jumbotron p {
+		color: #ffffff;
+}
+.navbar {
+    margin-bottom: 0px;
+}
