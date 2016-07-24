@@ -8,7 +8,7 @@
                     <h3 class="text-center">{{u.nickname}}</h3>
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <span class="badge">{{u.main_class}}</span> Main Class
+                            <span class="badge">{% if u.main_class %}<img width="20px" height="20px" src="{{url_for('static', filename='img/classes/' + u.main_class+'.png')}}" />{% else %}Not set{% endif %}</span> Main Class
                         </li>
                         <li class="list-group-item">
                             <span class="badge">{{u.skill_level}}</span> Skill Level
@@ -16,9 +16,18 @@
                         <li class="list-group-item">
                             <span style="float: right;" class="label label-{% if status==" online " %}success{% else %}default{% endif %}">{{status}}</span>                            Status
                         </li>
+                        <li class="list-group-item">
+                            <span class="badge">{% if u.is_merc == 1 %}<i class="fa fa-check" aria-hidden="true"></i>{% else %}<i class="fa fa-times" aria-hidden="true"></i>{% endif %}</span> Merc
+                        </li>
+                        <li class="list-group-item">
+                            <span class="badge">{% if u.is_mentor == 1 %}<i class="fa fa-check" aria-hidden="true"></i>{% else %}<i class="fa fa-times" aria-hidden="true"></i>{% endif %}</span> Mentor
+                        </li>
+                        <li class="list-group-item">
+                            <span class="badge">{{u.last_online}}</span> Last Login
+                        </li>
                     </ul>
                     <a class="btn btn-success btn-block" href="#"><i class="fa fa-envelope-o"></i> Message</a>
-                    <a class="btn btn-warning btn-block" href=""><i class="fa fa-pencil-square-o"></i> Edit</a>
+                    <a class="btn btn-warning btn-block" href="{{ url_for('profile_edit')}}"><i class="fa fa-pencil-square-o"></i> Edit</a>
                     <a class="btn btn-default btn-block" href=""><i class="fa fa-plus-square-o"></i> New Team</a>
                 </div>
             </div>
@@ -30,7 +39,13 @@
                     <h3 class="panel-title">Player info</h3>
                 </div>
                 <div class="panel-body">
-                    availability, achievements, won
+                    <div class="btn-group btn-group-justified">
+                        <a href="{{u.profile_url}}" target="_blank" class="btn btn-default"><i class="fa fa-steam-square" aria-hidden="true"></i> Steam Profile</a>
+                        <a href="http://steamrep.com/search?q={{u.steam_id}}" target="_blank" class="btn btn-default">SteamRep</a>
+                        <a href="http://www.ugcleague.com/players_page.cfm?player_id={{u.steam_id}}" target="_blank" class="btn btn-default">UGC Profile</a>
+                        <a href="http://logs.tf/profile/{{u.steam_id}}" target="_blank" class="btn btn-default"><i class="fa fa-history" aria-hidden="true"></i> Logs</a>
+                        <a href="steam://friends/add/{{ u.steam_id }}" target="_blank" class="btn btn-default"><i class="fa fa-plus" aria-hidden="true"></i> Add on Steam</a>
+                    </div>
                 </div>
             </div>
 

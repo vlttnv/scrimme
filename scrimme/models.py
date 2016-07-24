@@ -9,15 +9,18 @@ class User(db.Model):
     steam_id = db.Column(db.String(40), unique=True)
     nickname  = db.Column(db.String(80))
     avatar_url = db.Column(db.String(80))
+    profile_url = db.Column(db.String(80))
     avatar_url_full = db.Column(db.String(80))
     join_date = db.Column(db.DateTime)
     last_online = db.Column(db.DateTime)
     is_merc = db.Column(db.Integer)
+    is_mentor = db.Column(db.Integer)
     last_updated = db.Column(db.String(45))
     skill_level = db.Column(db.String(80))
     main_class = db.Column(db.String(45))
     note = db.Column(db.Text)
     region = db.Column(db.String(45))
+    availability = db.Column(db.String(100))
 
     # Relationship
     # memberships             = db.relationship('Membership',
